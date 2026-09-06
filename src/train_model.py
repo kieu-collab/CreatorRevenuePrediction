@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import platform
+import re
 import warnings
 from datetime import UTC, datetime
 from pathlib import Path
@@ -34,6 +35,12 @@ except ImportError:  # direct execution: python src/train_model.py
 
 SEED = 42
 NUMERIC_FEATURES = [c for c in MODEL_FEATURES if c not in CATEGORICAL_FEATURES]
+
+
+def model_filename(model_name: str) -> str:
+    """Return a stable, web-upload-friendly artifact name for a candidate model."""
+    slug = re.sub(r"[^a-z0-9]+", "_", model_name.lower()).strip("_")
+    return f"model_{slug}.pkl"
 
 
 def regression_metrics(y_true: pd.Series, y_pred: np.ndarray) -> dict[str, float]:
@@ -231,9 +238,8 @@ def train_and_save(
     best_name = str(metrics.iloc[0]["Model"])
     best_model = fitted[best_name]
     best_pred = np.clip(best_model.predict(X_test), 0, None)
-
-    residual_log = np.log1p(y_test.to_numpy()) - np.log1p(best_pred)
-    q10, q90 = np.quantile(residual_log, [0.10, 0.90])
+    best_residual_log = np.log1p(y_test.to_numpy()) - np.log1p(best_pred)
+    best_q10, best_q90 = np.quantile(best_residual_log, [0.10, 0.90])
 
     prediction_rows = clean.iloc[test_idx][
         ["creator_id", "creator_name", "brand_name", "product_category", "campaign_date", "followers"]
@@ -300,6 +306,7 @@ def train_and_save(
         }
     )
 
+    available_models = {name: model_filename(name) for name in metrics["Model"]}
     metadata = {
         "trained_at_utc": datetime.now(UTC).isoformat(),
         "python_version": platform.python_version(),
@@ -311,10 +318,12 @@ def train_and_save(
         "target": TARGET,
         "target_definition": "Creator-attributed TikTok Shop GMV/revenue in VND for the campaign window.",
         "best_model": best_name,
+        "selected_model": best_name,
+        "available_models": available_models,
         "features": MODEL_FEATURES,
         "defaults": defaults,
-        "prediction_interval_log_residual_q10": float(q10),
-        "prediction_interval_log_residual_q90": float(q90),
+        "prediction_interval_log_residual_q10": float(best_q10),
+        "prediction_interval_log_residual_q90": float(best_q90),
         "validation_warnings": warnings_list,
         "skipped_optional_models": skipped,
         "failed_models": failures,
@@ -325,8 +334,22 @@ def train_and_save(
             "Kalodata Views and activity counts are period observations and should be replaced by lagged pre-campaign history in production.",
         ],
     }
-    bundle = {"model": best_model, "metadata": metadata}
-    joblib.dump(bundle, model_dir / "best_model.pkl")
+
+    for name, model in fitted.items():
+        candidate_pred = np.clip(model.predict(X_test), 0, None)
+        residual_log = np.log1p(y_test.to_numpy()) - np.log1p(candidate_pred)
+        q10, q90 = np.quantile(residual_log, [0.10, 0.90])
+        candidate_metadata = {
+            **metadata,
+            "selected_model": name,
+            "prediction_interval_log_residual_q10": float(q10),
+            "prediction_interval_log_residual_q90": float(q90),
+        }
+        candidate_bundle = {"model": model, "metadata": candidate_metadata}
+        joblib.dump(candidate_bundle, model_dir / model_filename(name), compress=3)
+        if name == best_name:
+            joblib.dump(candidate_bundle, model_dir / "best_model.pkl", compress=3)
+
     (model_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
     return metadata
 
