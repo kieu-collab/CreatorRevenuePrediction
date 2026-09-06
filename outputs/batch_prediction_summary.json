@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-09-06T11:27:28.713252+00:00",
+  "model": "CatBoost",
+  "protocol": "5-fold GroupKFold by creator_id",
+  "rows": 4798,
+  "creators": 3132,
+  "metrics": {
+    "MAE": 140051235.4040704,
+    "RMSE": 1458696290.6800528,
+    "MAPE": 96.9047188959291,
+    "R2": 0.30693951120876506
+  },
+  "interval_log_residual_q10": -1.3635921474380772,
+  "interval_log_residual_q90": 1.507504311750459,
+  "outputs": [
+    "kol_revenue_predictions.csv",
+    "kol_revenue_ranking.csv"
+  ],
+  "warning": "Current seed data contains same-period activity proxies and default marketing fields; use rankings as MVP evidence only."
+}
