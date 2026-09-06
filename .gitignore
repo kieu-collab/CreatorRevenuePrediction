@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+catboost_info/
+data/raw/*
+!data/raw/.gitkeep
+data/uploaded_creator_campaign.csv

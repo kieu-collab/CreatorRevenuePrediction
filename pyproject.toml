@@ -1,0 +1,15 @@
+[project]
+name = "creator-revenue-prediction"
+version = "1.0.0"
+requires-python = ">=3.12,<3.14"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["notebooks/*.ipynb", ".venv"]
+
+[tool.ruff.lint]
+ignore = ["BLE001"]
