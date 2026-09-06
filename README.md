@@ -17,6 +17,7 @@ CreatorRevenuePrediction/
 │   └── raw/                     # local raw exports, ignored by Git
 ├── models/
 │   ├── best_model.pkl           # preprocessor + winning regressor
+│   ├── model_*.pkl              # every successfully trained candidate, selectable in Streamlit
 │   ├── metadata.json
 │   ├── metrics.csv
 │   ├── feature_importance.csv
@@ -93,7 +94,7 @@ Feature engineering includes log scale, creator tier, views/follower, engaged vi
 | CatBoost | Strong for nonlinear tabular relationships | Heavier dependency; current pipeline one-hot encodes for a common contract |
 | Neural Network | Captures complex smooth interactions | Needs more data, scaling and careful validation; not default for small campaign tables |
 
-All models receive the same preprocessing contract. Target uses `log1p`/`expm1` because revenue is heavily right-skewed. The winner is selected by holdout RMSE; MAE, MAPE and R² remain visible to avoid one-metric optimization.
+All models receive the same preprocessing contract. Target uses `log1p`/`expm1` because revenue is heavily right-skewed. The winner is selected by holdout RMSE; MAE, MAPE and R² remain visible to avoid one-metric optimization. Every successfully trained candidate is persisted as `models/model_*.pkl`, so the Streamlit sidebar can switch the active inference model without retraining.
 
 Feature importance uses permutation importance on untouched holdout rows. SHAP is generated when the winning estimator/version supports tree explanations. Error analysis is segmented by creator tier.
 
@@ -133,6 +134,8 @@ python -m src.train_model --data data/creator_campaign.csv --model-dir models --
 ```bash
 streamlit run app.py
 ```
+
+Use **Mô hình dự báo đang triển khai** in the sidebar to switch the model used by Revenue Prediction and Scenario Simulation. The Analytics page compares every trained model with MAE, RMSE, MAPE and R² charts plus a ranked table; the best row by RMSE is highlighted.
 
 ## Predict revenue for every KOL
 
