@@ -1,5 +1,5 @@
 {
-  "trained_at_utc": "2026-09-06T06:29:32.833985+00:00",
+  "trained_at_utc": "2026-09-06T13:56:06.810197+00:00",
   "python_version": "3.12.14",
   "rows": 4798,
   "unique_creators": 3132,
@@ -9,6 +9,14 @@
   "target": "revenue",
   "target_definition": "Creator-attributed TikTok Shop GMV/revenue in VND for the campaign window.",
   "best_model": "CatBoost",
+  "selected_model": "CatBoost",
+  "available_models": {
+    "CatBoost": "model_catboost.pkl",
+    "Gradient Boosting": "model_gradient_boosting.pkl",
+    "Random Forest": "model_random_forest.pkl",
+    "Neural Network": "model_neural_network.pkl",
+    "Linear Regression": "model_linear_regression.pkl"
+  },
   "features": [
     "followers",
     "avg_views",
