@@ -3,7 +3,7 @@ import pandas as pd
 
 from src.data_processing import clean_dataset, parse_compact_number
 from src.feature_engineering import LEAKAGE_COLUMNS, MODEL_FEATURES, build_features
-from src.train_model import regression_metrics, split_data
+from src.train_model import model_filename, regression_metrics, split_data
 
 
 def sample_frame(rows=60):
@@ -60,3 +60,8 @@ def test_regression_metrics():
     assert metrics["MAE"] == 10
     assert metrics["RMSE"] == 10
     assert metrics["R2"] > 0.9
+
+
+def test_candidate_model_filename_is_stable():
+    assert model_filename("Linear Regression") == "model_linear_regression.pkl"
+    assert model_filename("CatBoost") == "model_catboost.pkl"
