@@ -1,79 +1,79 @@
 feature,mean_abs_shap_log_revenue
-products_promoted,0.6889974392717839
-campaign_intensity,0.6542951334637217
-engaged_views,0.41759024609148143
-planned_reach,0.36720811022247607
-log_avg_views,0.2635782684206328
-brand_fit_interaction,0.22589482858548715
-followers,0.18164763211593873
-avg_views,0.17763557857538123
-brand_name_Lubylab Official Mall,0.1632809114296176
-log_followers,0.15736613516358414
-planned_live_sessions,0.1454925513564496
-log_product_price,0.11499973396811247
-creator_power_score,0.11306995471486718
-creator_tier_Nano,0.10411080939807864
-discounted_price,0.09876302666510234
-views_per_follower,0.09833234970240398
-product_price,0.09686878671896391
-brand_name_3CE STYLENANDA VIETNAM,0.08097853938928162
-brand_name_aurora castle chinh chu,0.07104681929387319
-brand_name_Trioderma,0.06981333541040975
-planned_posts,0.06917793454196774
-brand_name_TUMIE SHOP,0.05474075460387084
-brand_name_ROCKSWEET-VN,0.044096454482721696
-brand_name_SmileeExtra & SeeMee,0.042507954120025296
-brand_name_KalaboTheLAb,0.040356663371114626
-brand_name_Merzy Vietnam,0.03681101221853951
-brand_name_SmileeExtra & Flossie,0.036761490719519424
-brand_name_COLORKEY COSMETICS VIỆT NAM,0.02159964092895355
-brand_name_HASAKI BEAUTY,0.019249943872917695
-brand_name_KIMXUYẾN Authentic,0.013782875190983838
-brand_name_Cocoon Vietnam,0.011140690484540807
-brand_name_JENNIEE SKIN SHOP,0.007028807703871332
-creator_tier_Mid-tier,0.005742933808914066
-creator_tier_Macro,0.0055572185530947
-creator_tier_Mega,0.004210483310025268
-brand_name_RETOLAB,0.0036454842365847714
-brand_name_Unilever Beauty,0.0032048494808876718
-creator_tier_Micro,0.0027656533525829818
-brand_name_Blemil Beauty,0.002576518894501032
-brand_name_Blanc Perfume,0.0024004116669094494
-brand_name_AZTK VN,0.002347219248910378
-brand_name_TFIT VIETNAM,0.001954019881260481
-brand_name_Cây Rơm,0.0019309539993783312
-brand_name_MENOW Mall,0.0010400234716472626
-brand_name_Garnier Vietnam,0.0008999780838545119
-brand_name_P&G Beauty Việt Nam,0.0008018559000851399
-brand_name_Carslan.VN,0.000498832547672654
-brand_name_ARMAFVIETNAM,0.0003160562163789725
-brand_name_Maybelline New York,0.0001259811123145406
-brand_name_The Cafuné,0.00011129234912425451
-brand_name_lixibox vietnam,0.00010399999741451912
-brand_name_L'oreal Paris Việt Nam,0.0
-brand_name_Repielvietnam,0.0
-brand_name_d'Alba piedmont VN,0.0
-engagement_rate,0.0
-brand_name_WHITE VALIA Shop,0.0
-brand_name_CANDID SKINCARE,0.0
-brand_name_Unilever - Chăm Sóc Cá Nhân,0.0
-discount_rate,0.0
-brand_name_Hexze Việt Nam,0.0
-campaign_duration_days,0.0
-brand_name_INNOSKIN VIETNAM,0.0
-historical_conversion_rate,0.0
+products_promoted,0.7804236724927855
+avg_views,0.6444545587047411
+campaign_intensity,0.4258271207350527
+creator_power_score,0.4134001876379236
+planned_reach,0.411105496786658
+product_price,0.3433961247709365
+log_avg_views,0.27039417014895395
+followers,0.16797388949441466
+log_followers,0.15502308113508703
+engaged_views,0.14321918617150997
+brand_name_Lubylab Official Mall,0.1368437424735066
+views_per_follower,0.12910172852423685
+planned_live_sessions,0.1259011554431684
+brand_name_aurora castle chinh chu,0.08474460741201596
+brand_name_Trioderma,0.06993392261990157
+log_product_price,0.06664615865045863
+brand_name_Cocoon Vietnam,0.06069974653103729
+brand_name_Merzy Vietnam,0.05762676006353822
+brand_name_SmileeExtra & Flossie,0.052940458108104715
+brand_name_KalaboTheLAb,0.0508573104847242
+brand_name_ROCKSWEET-VN,0.04616814686537486
+planned_posts,0.04400765560949227
+brand_name_SmileeExtra & SeeMee,0.04058227898239058
+brand_name_HASAKI BEAUTY,0.03903216671438609
+brand_name_COLORKEY COSMETICS VIỆT NAM,0.03818291189095617
+brand_name_JENNIEE SKIN SHOP,0.0188048827153246
+brand_name_KIMXUYẾN Authentic,0.018066964322900274
+brand_name_Blemil Beauty,0.016540225320026088
+brand_name_P&G Beauty Việt Nam,0.014524073057751054
+brand_name_L'oreal Paris Việt Nam,0.010137047158910761
+brand_fit_interaction,0.009745246865943774
+brand_name_TFIT VIETNAM,0.008941110248716709
+creator_tier_Macro,0.008631523492247682
+brand_name_Blanc Perfume,0.007692765037619672
+brand_name_Unilever Beauty,0.0070907250398479695
+discounted_price,0.0069935270176769765
+creator_tier_Mid-tier,0.00665124938069359
+creator_tier_Micro,0.0063350538375078515
+brand_name_Garnier Vietnam,0.005696896249025098
+brand_name_d'Alba piedmont VN,0.004934291845645466
+brand_name_TUMIE SHOP,0.00388784602004462
+brand_name_AZTK VN,0.0037937691548418496
+creator_tier_Nano,0.0027393977654333592
+brand_name_Cỏ Mềm,0.0024285401299115024
+brand_name_ARMAFVIETNAM,0.0023416368053317924
+brand_name_Judydoll Vietnam,0.002037160552101469
+brand_name_Maybelline New York,0.0018044242083650863
+brand_name_Meiking Việt Nam,0.00143342624349543
+brand_name_CANDID SKINCARE,0.0013522020015685383
+brand_name_CeraVe Việt Nam,0.0013425606996729895
+brand_name_RETOLAB,0.0013210077710157397
+brand_name_AHC Vietnam,0.0011373754805952027
+creator_tier_Mega,0.0010036134246923971
+brand_name_MENOW Mall,0.0007788430744966262
+brand_name_Unilever - Chăm Sóc Cá Nhân,0.000758565805893453
+brand_name_LUNYS STORE,0.0007313361571208364
+brand_name_MQ SKIN - STORE,0.0006717802339211366
+brand_name_MISTINE BWG VIETNAM,0.0006341955451779807
+brand_name_Repielvietnam,0.0004594799165982425
+brand_name_Carslan.VN,0.00036206868243021233
+brand_name_lixibox vietnam,0.00019260134397025352
+brand_name_INNOSKIN VIETNAM,0.0001642998520390815
 brand_fit_score,0.0
-creator_niche_Beauty & Personal Care,0.0
-brand_name_LUNYS STORE,0.0
-brand_name_AHC Vietnam,0.0
-brand_name_Judydoll Vietnam,0.0
+historical_conversion_rate,0.0
+discount_rate,0.0
+campaign_duration_days,0.0
+engagement_rate,0.0
 product_category_Beauty & Personal Care,0.0
-brand_name_Meiking Việt Nam,0.0
+brand_name_3CE STYLENANDA VIETNAM,0.0
+creator_niche_Beauty & Personal Care,0.0
+brand_name_Hexze Việt Nam,0.0
 brand_name_FOCALLURE SHOP,0.0
-brand_name_MQ SKIN - STORE,0.0
-brand_name_MISTINE BWG VN,0.0
-brand_name_MISTINE BWG VIETNAM,0.0
-brand_name_CeraVe Việt Nam,0.0
+brand_name_Cây Rơm,0.0
 brand_name_COLORKEY LUMINOUS VIỆT NAM,0.0
+brand_name_MISTINE BWG VN,0.0
 brand_name_La Roche-Posay Việt Nam,0.0
-brand_name_Cỏ Mềm,0.0
+brand_name_The Cafuné,0.0
+brand_name_WHITE VALIA Shop,0.0

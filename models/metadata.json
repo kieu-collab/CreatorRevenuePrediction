@@ -1,6 +1,6 @@
 {
-  "trained_at_utc": "2026-09-06T13:56:06.810197+00:00",
-  "python_version": "3.12.14",
+  "trained_at_utc": "2026-09-07T07:42:41.405461+00:00",
+  "python_version": "3.13.15",
   "rows": 4798,
   "unique_creators": 3132,
   "train_rows": 3814,
@@ -8,9 +8,11 @@
   "split_strategy": "group_holdout_by_creator",
   "target": "revenue",
   "target_definition": "Creator-attributed TikTok Shop GMV/revenue in VND for the campaign window.",
-  "best_model": "CatBoost",
-  "selected_model": "CatBoost",
+  "best_model": "LightGBM",
+  "selected_model": "LightGBM",
   "available_models": {
+    "LightGBM": "model_lightgbm.pkl",
+    "XGBoost": "model_xgboost.pkl",
     "CatBoost": "model_catboost.pkl",
     "Gradient Boosting": "model_gradient_boosting.pkl",
     "Random Forest": "model_random_forest.pkl",
@@ -62,13 +64,10 @@
     "creator_cost": 1000000.0,
     "gross_margin_rate": 0.35
   },
-  "prediction_interval_log_residual_q10": -1.4446248645386928,
-  "prediction_interval_log_residual_q90": 1.6124179200194182,
+  "prediction_interval_log_residual_q10": -1.463877033410839,
+  "prediction_interval_log_residual_q90": 1.5513530213675222,
   "validation_warnings": [],
-  "skipped_optional_models": {
-    "XGBoost": "Unavailable in this runtime: XGBoostError: \nXGBoost Library (libxgboost.dylib) could not be loaded.\nLikely causes:\n  * OpenMP runtime is not installed\n    - vcomp140.dll or libgomp-1.dll for Windows\n    - libomp.dylib for Mac OSX\n    - libgomp.so for Linux and other UNIX-like OSes\n    Mac OSX users: Run `brew install libomp` to install OpenMP runtime.\n\n  * You are running 32-bit Python on a 64-bit OS\n\nError message(s): [\"dlopen(/Users/KielViVu/Desktop/Thầy Dã/CreatorRevenuePrediction/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.dylib, 0x0006): Library not loaded: @rpath/libomp.dylib\\n  Referenced from: <09B43001-8527-34F6-AAE4-B97DA8A6CBC0> /Users/KielViVu/Desktop/Thầy Dã/CreatorRevenuePrediction/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.dylib\\n  Reason: tried: '/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/Users/KielViVu/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/libomp.dylib' (no such file), '/Users/KielViVu/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/libomp.dylib' (no such file)\"]\n",
-    "LightGBM": "Unavailable in this runtime: OSError: dlopen(/Users/KielViVu/Desktop/Thầy Dã/CreatorRevenuePrediction/.venv/lib/python3.12/site-packages/lightgbm/lib/lib_lightgbm.dylib, 0x0006): Library not loaded: @rpath/libomp.dylib\n  Referenced from: <59CCDAC2-EBAE-32F7-ADF4-469B834532C9> /Users/KielViVu/Desktop/Thầy Dã/CreatorRevenuePrediction/.venv/lib/python3.12/site-packages/lightgbm/lib/lib_lightgbm.dylib\n  Reason: tried: '/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/opt/local/lib/libomp/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/local/lib/libomp/libomp.dylib' (no such file), '/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/libomp/lib/libomp.dylib' (no such file), '/opt/local/lib/libomp/libomp.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/local/lib/libomp/libomp.dylib' (no such file), '/Users/KielViVu/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/libomp.dylib' (no such file), '/Users/KielViVu/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/libomp.dylib' (no such file)"
-  },
+  "skipped_optional_models": {},
   "failed_models": {},
   "shap_status": "created",
   "data_limitations": [
